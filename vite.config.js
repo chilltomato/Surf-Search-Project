@@ -5,7 +5,7 @@ export default defineConfig({
   root: "src/",
       preview: {
           host: true,
-          allowedHosts: ['wdd330-sleepoutside-cxz0.onrender.com']
+          allowedHosts: ['https://surf-search-project.onrender.com/']
     },
   build: {
     outDir: "../dist",
