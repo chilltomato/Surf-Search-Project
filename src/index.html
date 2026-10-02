@@ -1,0 +1,42 @@
+<head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/pagestyle.css">
+    <title>surf search</title>
+    <script src="js/quicksearch.js" type="module"></script>
+</head>
+<body>
+<header id="header"></header>
+<main>
+<form name="SearchEngine" action="../results/index.html">
+    <h1>Search</h1>
+    <input type="hidden" name="quicksearch" value="false">
+    <div class="MainSearchEngine">
+                <label for="search">Search the web</label>
+                <input type="text" name="search" id="search" required>
+                <button type="submit">Search</button>
+    </div>
+    <div class="SearchParamaters"> 
+        <label for="location">Location (make sure its "city,state,country")</label>
+        <input type="text" name="location" id="location" required value="New York,New York,United States">
+        <label for="device">Device:</label>
+        <select name="device" id="device">
+            <option value="desktop">Desktop</option>
+            <option value="mobile">Mobile</option>
+            <option value="tablet">Tablet</option>
+        </select>
+        <label for="type">search type</label>
+        <select name="type" id="type">
+            <option value="web">Web</option>
+            <option value="images">Images</option>
+            <option value="videos">Videos</option>
+            <option value="news">News</option>
+            <option value="shopping">Shopping</option>
+        </select>
+            <label for="page">Page to get results from</label>
+            <input type="text" name="page" id="page" required value="1">
+    </div>
+</form>
+</main>
+</body>

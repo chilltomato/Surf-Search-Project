@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+:root {
+   --paragraphfont: "Electrolize";
+    --backgroundcolor1: #d8e8e3;
+    --backgroundcolor2: #87919E;
+    --fontcolor1: #002761;
+    --fontcolor2: #00fbff;
+   font-family: var(--paragraphfont);
+background-color: var(--backgroundcolor1);
+   color: var(--fontcolor1);
+   margin: 4%;
+}
+
+#header {
+    display: flex;
+}
+
+.quicksearchform{
+    display: flex;
+}
+
+.MainSearchEngine{
+    display: grid;
+}
+
+.MainSearchEngine{
+    margin-bottom: 2%;
+}
+
+.search-result{
+background-color: var(--backgroundcolor2);
+outline: var(--backgroundcolor1);
+}
+
+.search-result.link{
+color: var(--fontcolor2)
+}
