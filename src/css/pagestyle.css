@@ -35,3 +35,26 @@ outline: var(--backgroundcolor1);
 .search-result.link{
 color: var(--fontcolor2)
 }
+
+
+
+@keyframes loadingAnimation {
+0%, 100% { transform: translateX(0)};
+45%{transform: translateX(-10px)}  
+}
+
+@keyframes ResultAnimation {
+0% { opacity: 0.01; transform: scale(0.1);  transform: rotate(5deg); };
+100% { opacity: 1; transform: scale(1); transform: rotate(0deg);};
+}
+
+#loading{
+    animation-name: loadingAnimation;
+    animation-duration: 1.1s;
+    animation-iteration-count: infinite;
+}
+
+.search-result {
+    animation-name: ResultAnimation;
+    animation-duration: 1.1s;
+}

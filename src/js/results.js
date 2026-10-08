@@ -1,4 +1,4 @@
-import {renderListWithTemplate, getParam, convertToJson} from "./utils.mjs";
+import {renderListWithTemplate, getParam} from "./utils.mjs";
 const baseUrl = import.meta.env.VITE_SERPSTACK_URL
 const api = import.meta.env.VITE_SERPSTACK_API
 
@@ -32,7 +32,6 @@ async function search () {
   const response = await fetch(`${baseUrl}?access_key=${api}&query=${search}&engine=google&type=${type}&device=${device}&location=${location}&page=${page}`);
   const data = await response.json();
   const resultdata = (data.organic_results)
-  console.log(resultdata)
   renderListWithTemplate(resultTemplate, results, resultdata); 
   const element = document.getElementById("loading");
   element.remove();
