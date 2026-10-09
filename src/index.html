@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="css/pagestyle.css">
     <title>surf search</title>
     <script src="js/quicksearch.js" type="module"></script>
+    <script src="js/main.js" type="module"></script>
 </head>
 <body>
 <header id="header"></header>
@@ -36,6 +37,39 @@
         </select>
             <label for="page">Page to get results from</label>
             <input type="text" name="page" id="page" required value="1">
+    </div>
+    <div id="ImageParameters" class="hidden">
+        <label for="images_type">Image Type</label>
+        <select name="images_type" id="images_type">
+            <option value="clipart">Clipart</option>
+            <option value="line_drawing">Line Drawing</option>
+            <option value="gif">GIF</option>
+        </select>
+        <label for="images_size">Image Size</label>
+        <select name="images_size" id="images_size">
+            <option value="large">Large</option>
+            <option value="medium">Medium</option>
+            <option value="icon">Icon</option>
+        </select>
+        <label for="images_color">Image Color</label>
+        <select name="images_color" id="images_color">
+            <option value="any">Any</option>
+            <option value="black_and_white">Black and white</option>
+            <option value="transparent">Transparent</option>
+            <option value="red">Red</option>
+            <option value="orange">Orange</option>
+            <option value="yellow">Yellow</option>
+            <option value="green">Green</option>
+            <option value="teal">Teal</option>
+            <option value="blue">Blue</option>
+            <option value="purple">Purple</option>
+            <option value="pink">Pink</option>
+            <option value="white">White</option>
+            <option value="gray">Gray</option>
+            <option value="black">Black</option>
+            <option value="brown">Brown</option>
+        </select>
+
     </div>
 </form>
 </main>
