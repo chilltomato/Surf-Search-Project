@@ -27,6 +27,10 @@ background-color: var(--backgroundcolor1);
     margin-bottom: 2%;
 }
 
+#SearchParamaters, #ImageParameters, #SearchParamaters{
+    display: flex;
+    flex-direction: row;
+  }
 .search-result{
 background-color: var(--backgroundcolor2);
 outline: var(--backgroundcolor1);
@@ -62,4 +66,12 @@ color: var(--fontcolor2)
 .search-result {
     animation-name: ResultAnimation;
     animation-duration: 1.1s;
+}
+
+@media all and (max-width: 425px) {
+  /* put your css styles in here */
+  #SearchParamaters, #ImageParameters, #SearchParamaters{
+    display: flex;
+    flex-direction: column;
+  }
 }
