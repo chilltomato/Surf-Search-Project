@@ -42,7 +42,7 @@ color: var(--fontcolor2)
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 

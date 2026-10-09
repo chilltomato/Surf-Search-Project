@@ -11,7 +11,7 @@
 <body>
 <header id="header"></header>
 <main>
-<form name="SearchEngine" action="../results/index.html">
+<form id="SearchEngine" action="../results/index.html">
     <h1>Search</h1>
     <input type="hidden" name="quicksearch" value="false">
     <div id="MainSearchEngine">
@@ -20,8 +20,11 @@
                 <button type="submit">Search</button>
     </div>
     <div id="SearchParamaters"> 
-        <label for="location">Location (make sure its "city,state,country")</label>
-        <input type="text" name="location" id="location" required value="New York,New York,United States">
+        <label for="sort">Sort Results By:</label>
+        <select name="sort" id="sort">
+            <option value="relevance">Relevance</option>
+            <option value="date">Date</option>
+        </select>
         <label for="device">Device:</label>
         <select name="device" id="device">
             <option value="desktop">Desktop</option>
@@ -39,7 +42,7 @@
             <label for="page">Page to get results from</label>
             <input type="text" name="page" id="page" required value="1">
     </div>
-    <div id="ImageParameters" class="hidden">
+    <div id="ImageParameters">
         <label for="images_type">Image Type</label>
         <select name="images_type" id="images_type">
             <option value="clipart">Clipart</option>
