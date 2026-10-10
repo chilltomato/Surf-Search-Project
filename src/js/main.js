@@ -33,7 +33,6 @@ imagefields.classList.toggle ("hidden", !showimage );
 });
 
 function fourmsubmit(){
-event.preventDefault();
 const values = Object.fromEntries(new FormData(SearchEngine).entries());
 localStorage.setItem('lastSearch', JSON.stringify(values));
 

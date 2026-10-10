@@ -61,13 +61,31 @@ function newsresultTemplate(result){
     </a>
   </div>`;
 }
+
+function WikipediaresultTemplate(result){
+  return `
+  <div class="search-result">
+    <a href="${result.content_urls.desktop.page}">
+      <h2>${result.title}</h2>
+      <p>${result.extract}</p>
+    </a>
+  </div>`;
+}
+
+
 search()
 async function search () {
   const search = getParam("search");
   const searchName = document.querySelector("#searchname");
   const searchType = document.querySelector("#searchtype");
   const results = document.querySelector("#results")
+  const wikipediaresult = document.querySelector("#wikipediaresult");
   searchName.innerHTML = search
+  
+  const wikipedia = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${search}`)
+  const wikipediajson = await wikipedia.json();
+  const wikipedisingleaarray = [wikipediajson];
+  renderListWithTemplate(WikipediaresultTemplate,wikipediaresult,wikipedisingleaarray)
 
   const quicksearch = getParam("quicksearch");
   if (quicksearch == "false"){
@@ -81,7 +99,7 @@ async function search () {
       const images_type = getParam("images_type");
       const images_size = getParam("images_size");
       const images_color = getParam("images_color");
-      const response = await fetch(`${baseUrl}?access_key=${api}&query=${search}&engine=google&type=${type}&device=${device}&sort=${sort}&page=${page}&images_type=${images_type}&images_size=${images_size}&images_color=${images_color}`);
+      const response = await fetch(`${baseUrl}?access_key=${api}&query=${search}&engine=google&type=${type}&device=${device}&page=${page}&images_type=${images_type}&images_size=${images_size}&images_color=${images_color}&sort=${sort}`);
       const data = await response.json();
       const resultdata = (data.image_results)
       console.log(resultdata)
@@ -90,7 +108,7 @@ async function search () {
       element.remove();
 
     } else {
-      const response = await fetch(`${baseUrl}?access_key=${api}&query=${search}&engine=google&type=${type}&device=${device}&location=${location}&page=${page}`);
+      const response = await fetch(`${baseUrl}?access_key=${api}&query=${search}&engine=google&type=${type}&device=${device}&page=${page}&sort=${sort}`);
       const data = await response.json();
       if (type == "videos") {
         const resultdata = (data.video_results)
