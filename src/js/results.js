@@ -81,11 +81,18 @@ async function search () {
   const results = document.querySelector("#results")
   const wikipediaresult = document.querySelector("#wikipediaresult");
   searchName.innerHTML = search
+  try {
+      const wikipedia = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${search}`)
+      if (wikipedia.ok) {
+      const wikipediajson = await wikipedia.json();
+      const wikipedisingleaarray = [wikipediajson];
+      renderListWithTemplate(WikipediaresultTemplate,wikipediaresult,wikipedisingleaarray)
+      } else {
+        return;
+      }
+  } catch (error) {
   
-  const wikipedia = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${search}`)
-  const wikipediajson = await wikipedia.json();
-  const wikipedisingleaarray = [wikipediajson];
-  renderListWithTemplate(WikipediaresultTemplate,wikipediaresult,wikipedisingleaarray)
+  };
 
   const quicksearch = getParam("quicksearch");
   if (quicksearch == "false"){
