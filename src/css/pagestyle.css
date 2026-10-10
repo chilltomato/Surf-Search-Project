@@ -41,10 +41,6 @@ outline: var(--backgroundcolor1);
 color: var(--fontcolor2)
 }
 
-.hidden {
-    display: none !important;
-}
-
 
 @keyframes loadingAnimation {
 0%, 100% { transform: translateX(0)};
@@ -54,6 +50,38 @@ color: var(--fontcolor2)
 @keyframes ResultAnimation {
 0% { opacity: 0.01; transform: scale(0.1);  transform: rotate(5deg); };
 100% { opacity: 1; transform: scale(1); transform: rotate(0deg);};
+}
+
+@keyframes elementuhideanimation {
+  0% { opacity: 0; transform: scale(1);}
+  50% { transform: scale(1.15); }
+  100% { opacity: 1; transform: scale(1);}
+}
+
+@keyframes elementshowanimation  {
+  0% { opacity: 0; transform: translateY(0); }
+  50% { transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes elementhideanimation  {
+  0% { opacity: 1; transform: translateY(0); }
+  50% { transform: translateY(30px); }
+  100% { opacity: 0; transform: translateY(0); }
+}
+
+#ImageParameters {
+  animation-name: elementshowanimation;
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+  animation-direction: normal;
+}
+
+#ImageParameters.hidden {
+  animation-name: elementhideanimation;
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+    pointer-events: none;
 }
 
 #loading{
