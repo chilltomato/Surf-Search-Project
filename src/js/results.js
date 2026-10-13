@@ -110,7 +110,6 @@ async function search () {
       const response = await fetch(`${baseUrl}?access_key=${api}&query=${search}&engine=google&type=${type}&device=${device}&page=${page}&images_type=${images_type}&images_size=${images_size}&images_color=${images_color}&sort=${sort}`);
       const data = await response.json();
       const resultdata = (data.image_results)
-      console.log(resultdata)
       renderListWithTemplate(imageresultsTemplate, results, resultdata); 
       const element = document.getElementById("loading");
       element.remove();
