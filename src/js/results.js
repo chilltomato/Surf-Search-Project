@@ -2,7 +2,6 @@ import {renderListWithTemplate, getParam} from "./utils.mjs";
 const baseUrl = import.meta.env.VITE_SERPSTACK_URL
 const api = import.meta.env.VITE_SERPSTACK_API
 
-
 function resultTemplate(result){
   return `
   <div class="search-result">
@@ -72,12 +71,14 @@ function WikipediaresultTemplate(result){
   </div>`;
 }
 
+const searchType = document.querySelector("#searchtype");
+
+
 
 search()
 async function search () {
   const search = getParam("search");
   const searchName = document.querySelector("#searchname");
-  const searchType = document.querySelector("#searchtype");
   const results = document.querySelector("#results")
   const wikipediaresult = document.querySelector("#wikipediaresult");
   searchName.innerHTML = search
